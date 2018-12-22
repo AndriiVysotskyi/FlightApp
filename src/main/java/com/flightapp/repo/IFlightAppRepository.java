@@ -11,4 +11,10 @@ public interface IFlightAppRepository {
 
 	int[] getDiscounts();
 
+	void addTicket(TicketDao ticket);
+
+	void addDestination(Integer destinationId);
+
+	void addCoupon(Integer couponId);
+
 }

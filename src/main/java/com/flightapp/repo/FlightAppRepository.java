@@ -60,4 +60,29 @@ public class FlightAppRepository implements IFlightAppRepository {
 		return discounts;
 	}
 
+	@Override
+	public void addTicket(TicketDao ticket) {
+		if (!tickets.containsKey(ticket.getTicketId())) {
+			tickets.put(ticket.getTicketId(), ticket);
+		}
+
+	}
+
+	@Override
+	public void addDestination(Integer destinationId) {
+		Set<String> destinationBaggages = new HashSet<>();
+		if (!baggages.containsKey(destinationId)) {
+			baggages.put(destinationId, destinationBaggages);
+		}
+
+	}
+
+	@Override
+	public void addCoupon(Integer couponId) {
+		if (!coupons.contains(couponId)) {
+			coupons.add(couponId);
+		}
+
+	}
+
 }
